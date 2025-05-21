@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instakill 3</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .infernal-title {
+            font-family: 'Cinzel', 'Georgia', serif;
+            font-size: 3.2em;
+            letter-spacing: 0.1em;
+            color: #b30000;
+            background: linear-gradient(90deg, #7b0707 0%, #b30000 60%, #ff1a1a 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            padding: 0.2em 0;
+            text-shadow:
+                0 2px 8px #2d0000,
+                0 1px 0 #fff2,
+                0 0px 0 #fff2;
+            border-bottom: 5px solid #7b0707;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1 class="infernal-title">
+            INSTAKILL 3
+        </h1>
+        <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="skull">
+                <i class="fas fa-skull-crossbones"></i>
+            </span>
+        </button>
+        <nav id="main-nav" class="menu-hidden">
+            <a href="#introduction">Instakill 1</a>
+            <a href="#participants">Instakill 2</a>
+            <a href="#prizes">Inscríbete ya</a>
+            <a href="#technical-characteristics">Reglas y normas</a>
+            <hr style="width:80%;border:0;border-top:1px solid #444;margin:1em 0;">
+            <div class="menu-footer">
+                <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
+                <div style="display:flex;gap:10px;margin:0.5em 0;">
+                    <a href="#" title="Instagram" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="Twitter" style="color:#fff;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Discord" style="color:#fff;"><i class="fab fa-discord"></i></a>
+                </div>
+                <p style="margin:0;font-size:0.8em;color:#888;">&copy; 2025 Instakill 3</p>
+            </div>
+        </nav>
+    </header>
+
+    <section id="introduction">
+        <h2>Introducción</h2>
+        <p>¿Qué es Instakill 3 y cómo se juega?</p>
+        <img src="path/to/image.jpg" alt="Imagen sobre Instakill">
+    </section>
+    <!-- ...resto igual... -->
+
+    <footer>
+        <p>&copy; 2023 Instakill 3. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Mostrar/ocultar menú y animar botón hamburguesa/cambiar a calavera
+        document.getElementById('menu-toggle').onclick = function() {
+            document.getElementById('main-nav').classList.toggle('menu-hidden');
+            this.classList.toggle('open');
+        };
+    </script>
+</body>
+</html>
