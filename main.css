@@ -1,23 +1,38 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    min-height: 200vh; /* Permite hacer scroll vertical */
-    overflow-y: auto;
+    min-height: 100vh;
+    background: #fff;
+    color: #222;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
     position: sticky;
-    top: 0px;
-    height: 77px;
+    top: 0;
+    width: 100%;
     background: #222;
     color: #fff;
     padding: 0;
     text-align: center;
     z-index: 100;
+    border-bottom: 5px solid #7b0707;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 77px;
 }
 
 .infernal-title {
+    text-align: center;
     font-family: 'Cinzel', 'Georgia', serif;
+    flex: 0 1 auto;
+    margin: 0 auto;
     font-size: 3.2em;
     letter-spacing: 0.12em;
     color: #b30000;
@@ -25,16 +40,15 @@ header {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin: 0;
     padding: 0.5em 0 0.2em 0;
     text-shadow:
         0 2px 8px #2d0000,
         0 1px 0 #fff2,
         0 0px 0 #fff2;
-    border-bottom: 0px solid #7b0707;
     background-color: #222;
     position: relative;
     z-index: 2;
+    border-bottom: none;
 }
 
 h1 {
@@ -47,10 +61,11 @@ h1 {
 
 /* Botón menú hamburguesa */
 #menu-toggle {
-    position: absolute;
-    top: -63px;
-    left: 30px;
-    transform: none;
+    position: static;
+    margin-right: auto;
+    margin-left: 0.5em;
+    margin-top: 0.3em;
+    align-self: flex-start;
     z-index: 2000;
     font-size: 2em;
     background: #222;
@@ -58,9 +73,9 @@ h1 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    padding: 0.2em 0.5em;
+    padding: 0.1em 0.6em;
     transition: background 0.2s, color 0.2s, transform 0.1s;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -70,26 +85,19 @@ h1 {
     overflow: hidden;
 }
 
-/* Líneas del icono hamburguesa: más juntas y más gordas */
+/* Líneas del icono hamburguesa */
 #menu-toggle .bar {
     display: block;
     width: 26px;
-    height: 4px;           /* Más gordas */
+    height: 4px;
     background: #fff;
     border-radius: 3px;
     transition: opacity 0.3s, transform 0.3s;
-    position: relative;
-    left: 0;
-    margin: 2.5px 0;         /* Más juntas */
+    margin: 2.5px 0;
 }
-#menu-toggle .bar:nth-child(1) {
-    margin-top: 2px;
-}
-#menu-toggle .bar:nth-child(3) {
-    margin-bottom: 2px;
-}
+#menu-toggle .bar:nth-child(1) { margin-top: 2px; }
+#menu-toggle .bar:nth-child(3) { margin-bottom: 2px; }
 
-/* Al abrir el menú: las barras desaparecen y la calavera aparece */
 #menu-toggle.open .bar {
     opacity: 0;
     transform: scale(0.5);
@@ -107,28 +115,19 @@ h1 {
     color: #fff;
     z-index: 2;
 }
-
 #menu-toggle.open .skull {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(0.70);
 }
-
-/* Efecto hover/click igual que antes */
-#menu-toggle:hover {
-    transform: scale(1.08);
-}
+#menu-toggle:hover { transform: scale(1.08); }
 #menu-toggle:active,
 #menu-toggle.open {
     background: #7b0707;
     color: #fff;
 }
 
-.menu-footer a:hover i {
-    color: #bc0d0d;
-    transition: color 0.2s;
-}
-
+/* Menú lateral */
 #main-nav {
     position: fixed;
     top: 0;
@@ -140,17 +139,15 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 70px;
+    padding-top: 77px;
     padding-left: 30px;
     z-index: 1000;
     transition: transform 0.3s ease;
     box-shadow: 2px 0 10px rgba(0,0,0,0.2);
 }
-
 #main-nav.menu-hidden {
     transform: translateX(-110%);
 }
-
 #main-nav a {
     color: #fff;
     text-decoration: none;
@@ -161,8 +158,6 @@ h1 {
     padding: 0.2em 0.5em;
     overflow: hidden;
 }
-
-/* Efecto subrayado animado al pasar el ratón */
 #main-nav a::after {
     content: "";
     display: block;
@@ -182,30 +177,113 @@ h1 {
     width: 100%;
     background: #bc0d0d;
 }
-
-/* Efecto click (active) */
 #main-nav a:active {
     background: #444;
     color: #7b0707;
     transform: scale(0.96);
     border-radius: 4px;
 }
+.menu-footer a:hover i {
+    color: #bc0d0d;
+    transition: color 0.2s;
+}
 
-/* Opcional: ocultar el botón en pantallas grandes y mostrar el menú normal */
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 799px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: 60px;
+        min-height: 60px;
+        border-bottom-width: 4px;
+        padding-left: 0.5em;
+    }
+    #menu-toggle {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        margin: 0;
+        font-size: 1.5em;
+        background: #333;
+        box-shadow: 0 2px 8px #0004;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2em;
+    }
+    .infernal-title {
+        font-size: 2em;
+        padding: 0;
+        margin-left: 1em;
+        text-align: left;
+    }
+    #main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80vw;
+        min-width: 160px;
+        max-width: 95vw;
+        height: 100vh;
+        padding-top: 65px;
+        padding-left: 16px;
+        font-size: 1em;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+        background: #222;
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+    #main-nav.menu-hidden {
+        transform: translateX(-110%);
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    #main-nav a {
+        font-size: 1em;
+        margin: 0.7em 0;
+        padding: 0.18em 0.3em;
+    }
+    .menu-footer {
+        font-size: 0.9em;
+        display: block;
+    }
+    section, footer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Menú horizontal en escritorio, debajo del título */
 @media (min-width: 800px) {
     #menu-toggle {
-        display: none;
+        display: none !important;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
     }
     #main-nav {
         position: static;
-        width: auto;
+        width: 100%;
         height: auto;
+        display: flex;
         flex-direction: row;
+        align-items: center;
+        justify-content: center;
         background: none;
         color: inherit;
         box-shadow: none;
         padding: 0;
         transform: none !important;
+        z-index: 1;
+        margin-top: 0.5em;
     }
     #main-nav.menu-hidden {
         transform: none !important;
@@ -213,5 +291,299 @@ h1 {
     #main-nav a {
         margin: 0 1em;
         color: #fff;
+        font-size: 1.1em;
+        padding: 0.2em 0.7em;
     }
+    /* Oculta "Síguenos:" y redes en escritorio */
+    .menu-footer > p,
+    .menu-footer > div {
+        display: none !important;
+    }
+    .menu-footer {
+        margin-left: 2em;
+        font-size: 1em;
+        color: #bbb;
+        display: block;
+    }
+}
+
+/* Ajustes para tablets */
+@media (min-width: 600px) and (max-width: 900px) {
+    .infernal-title {
+        font-size: 2.2em;
+    }
+    header {
+        height: 65px;
+    }
+    #menu-toggle {
+        margin-left: 0.2em;
+        margin-top: 0.3em;
+        width: 36px;
+        height: 36px;
+        font-size: 1.5em;
+        padding: 0.05em 0.8em;
+    }
+    #main-nav {
+        width: 180px;
+        padding-top: 60px;
+        padding-left: 18px;
+    }
+    #main-nav a {
+        font-size: 1.05em;
+        margin: 0.8em 0;
+    }
+}
+
+section {
+    max-width: 900px;
+    margin: 0 auto 2.5em auto;
+    padding: 1.2em 2em;
+    box-sizing: border-box;
+    background: transparent;
+    flex: 1 0 auto;
+}
+footer {
+    text-align: center;
+    font-size: 0.95em;
+    padding: 1em 0.5em;
+    background: #181818;
+    color: #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 100;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.instakill1-link:hover,
+.instakill1-link:focus {
+    color: #ff3333;
+    text-decoration: underline;
+}
+.instakill1-link .fa-youtube {
+    transition: color 0.2s, transform 0.2s;
+}
+.instakill1-link:hover .fa-youtube,
+.instakill1-link:focus .fa-youtube {
+    color: #fff;
+    transform: scale(1.15);
+}
+.instakill1-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    color: #fff;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+.instakill1-link:hover,
+.instakill1-link:focus {
+    color: #ff3333;
+    text-decoration: underline;
+}
+.instakill1-link .fa-youtube {
+    transition: color 0.2s, transform 0.2s;
+}
+.instakill1-link:hover .fa-youtube,
+.instakill1-link:focus .fa-youtube {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* --- SUBMENÚ INSTAKILL 2 --- */
+.nav-item-with-submenu {
+    position: relative;
+    display: block;
+}
+
+#main-nav .submenu-arrow {
+    margin-left: 0.4em;
+    font-size: 0.85em;
+    transition: transform 0.3s;
+    vertical-align: middle;
+}
+
+#main-nav .submenu-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+#submenu-instakill2 {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #222;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 6px 18px #0007;
+    min-width: 170px;
+    padding: 0.3em 0;
+    z-index: 2001;
+    list-style: none;
+    margin: 0;
+    border-top: 2px solid #7b0707;
+}
+
+#submenu-instakill2.open {
+    display: block;
+}
+
+#submenu-instakill2 li {
+    width: 100%;
+}
+
+#submenu-instakill2 a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 0.5em 1.2em;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+    border-radius: 0;
+    white-space: nowrap;
+    gap: 0.5em;
+}
+
+#submenu-instakill2 a:hover {
+    background: #7b0707;
+    color: #fff;
+    padding-left: 1.7em;
+}
+
+/* Responsive: menú lateral */
+@media (max-width: 799px) {
+    #submenu-instakill2 {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        background: #222;
+        min-width: 0;
+        width: 100%;
+        padding: 0.2em 0 0.2em 0.5em;
+        border-top: none;
+    }
+    #submenu-instakill2 a {
+        font-size: 0.98em;
+        padding: 0.45em 0.5em 0.45em 1.5em;
+    }
+    #submenu-instakill2 a:hover {
+        padding-left: 2em;
+    }
+}
+.galeria-imagenes figure {
+    margin: 0;
+    padding: 0;
+    background: #b30000; /* Color del título, sin degradado */
+    border-radius: 12px;
+    border: 4px solid #fff;
+    outline: 2px solid #7b0707;
+    box-shadow: 0 2px 12px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    transition: outline-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.galeria-imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 2em 0 1em 0;
+}
+.galeria-imagenes figure {
+    margin: 0;
+    padding: 0;
+    background: #222; /* Mismo color que el header */
+    border-radius: 12px;
+    border: 4px solid #fff;
+    outline: 2px solid #b30000;
+    box-shadow: 0 2px 12px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    transition: outline-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.galeria-imagenes figure:hover {
+    outline-color: #b30000;
+    box-shadow: 0 6px 24px #0004;
+    transform: scale(1.04) rotate(-1deg);
+    z-index: 2;
+}
+.galeria-imagenes img {
+    width: 100%;
+    max-width: 160px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #222;
+    margin: 0;
+    display: block;
+    cursor: zoom-in;
+}
+.galeria-imagenes figcaption {
+    font-size: 0.97em;
+    font-weight: 900;
+    color: #b92a2a; 
+    text-align: center;
+    margin: 0.5em 0 0.7em 0;
+    font-family: 'Cinzel', 'Georgia', serif;
+    letter-spacing: 0.03em;
+    background: #222; 
+    border-radius: 0 0 8px 8px;
+    padding: 0.2em 0.3em 0.1em 0.3em;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Responsive: columnas solo en pantallas pequeñas */
+@media (max-width: 600px) {
+    .galeria-imagenes {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .galeria-imagenes figure {
+        width: 95vw;
+        max-width: 340px;
+    }
+    .galeria-imagenes img {
+        max-width: 100%;
+    }
+}
+
+/* Centrar más la imagen ampliada y eliminar pie de foto en lightbox */
+.img-lightbox-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 10, 10, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    animation: fadeInBg 0.2s;
+    padding: 0;
+}
+.img-lightbox-img {
+    display: block;
+    margin: 0 auto;
+    max-width: 92vw;
+    max-height: 85vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px #000b;
+    border: 6px solid #fff;
+    outline: 3px solid #b30000;
+    background: #7b0707;
+    animation: fadeInImg 0.2s;
+}
+.img-lightbox-caption {
+    display: none !important; /* Oculta el pie de foto en el lightbox */
 }

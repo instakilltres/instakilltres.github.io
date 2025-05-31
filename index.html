@@ -6,32 +6,10 @@
     <title>Instakill 3</title>
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        .infernal-title {
-            font-family: 'Cinzel', 'Georgia', serif;
-            font-size: 3.2em;
-            letter-spacing: 0.1em;
-            color: #b30000;
-            background: linear-gradient(90deg, #7b0707 0%, #b30000 60%, #ff1a1a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0;
-            padding: 0.2em 0;
-            text-shadow:
-                0 2px 8px #2d0000,
-                0 1px 0 #fff2,
-                0 0px 0 #fff2;
-            border-bottom: 5px solid #7b0707;
-        }
-    </style>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="infernal-title">
-            INSTAKILL 3
-        </h1>
         <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -40,12 +18,43 @@
                 <i class="fas fa-skull-crossbones"></i>
             </span>
         </button>
+        <h1 class="infernal-title">
+            INSTAKILL 3
+        </h1>
         <nav id="main-nav" class="menu-hidden">
-            <a href="#introduction">Instakill 1</a>
-            <a href="#participants">Instakill 2</a>
+            <a 
+                href="https://youtube.com/playlist?list=PLy7Jyp234n08Pd7CMxV9msILZ6JeBKHNv&si=UhAekBsff0g0_qBk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="instakill1-link"
+                title="Ver todos los episodios de Instakill 1 en YouTube"
+            >
+                Instakill 1 <i class="fab fa-youtube" style="color:#ff3333;margin-left:0.4em;font-size:1em;vertical-align:middle;"></i>
+            </a>
+            <div class="nav-item-with-submenu">
+                <a href="#" id="instakill2-link" class="instakill2-link" title="Más sobre Instakill 2">
+                    Instakill 2 <i class="fas fa-chevron-down submenu-arrow"></i>
+                </a>
+                <ul class="submenu" id="submenu-instakill2">
+                    <li>
+                        <a href="https://instakill2.github.io" target="_blank" rel="noopener noreferrer">
+                            Web <i class="fas fa-globe" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recuerdos.html">
+                            Imágenes <i class="fas fa-image" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participantes.html">
+                            Participantes <i class="fas fa-users" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <a href="#prizes">Inscríbete ya</a>
             <a href="#technical-characteristics">Reglas y normas</a>
-            <hr style="width:80%;border:0;border-top:1px solid #444;margin:1em 0;">
             <div class="menu-footer">
                 <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
                 <div style="display:flex;gap:10px;margin:0.5em 0;">
@@ -63,10 +72,8 @@
         <p>¿Qué es Instakill 3 y cómo se juega?</p>
         <img src="path/to/image.jpg" alt="Imagen sobre Instakill">
     </section>
-    <!-- ...resto igual... -->
-
     <footer>
-        <p>&copy; 2023 Instakill 3. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Instakill 3. Desarrollo web por Sergio Díaz Pereira</p>
     </footer>
 
     <script>
@@ -75,6 +82,32 @@
             document.getElementById('main-nav').classList.toggle('menu-hidden');
             this.classList.toggle('open');
         };
+
+        // Submenú Instakill 2
+        const instakill2Link = document.getElementById('instakill2-link');
+        const submenu2 = document.getElementById('submenu-instakill2');
+        const submenuArrow2 = instakill2Link.querySelector('.submenu-arrow');
+        let submenu2Open = false;
+
+        instakill2Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            submenu2.classList.toggle('open');
+            submenu2Open = !submenu2Open;
+            submenuArrow2.classList.toggle('rotated', submenu2Open);
+        });
+
+        // Cerrar submenú al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (
+                submenu2Open &&
+                !instakill2Link.contains(e.target) &&
+                !submenu2.contains(e.target)
+            ) {
+                submenu2.classList.remove('open');
+                submenuArrow2.classList.remove('rotated');
+                submenu2Open = false;
+            }
+        });
     </script>
 </body>
 </html>
