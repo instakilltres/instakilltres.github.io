@@ -5,7 +5,7 @@
         "rol": "administrador",
         "veterania": true,
         "dias_vivo": "-",
-        "imagen": "imagenes/participantes/eyepro.png"
+        "imagen": "imagenes/participantes/eyepro.PNG"
     },
     {
         "nombre_real": "Andrés Ballester Lozano",
@@ -13,7 +13,7 @@
         "rol": "moderador",
         "veterania": false,
         "dias_vivo": "-",
-        "imagen": "imagenes/participantes/vertox.png"
+        "imagen": "imagenes/participantes/andrip.PNG"
     },
     {
         "nombre_real": "-",
@@ -21,7 +21,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "7/28",
-        "imagen": "imagenes/participantes/terox.png"
+        "imagen": "imagenes/participantes/terox.PNG"
     },
     {
         "nombre_real": "Adrián Carmona Gallardo",
@@ -29,7 +29,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "7/28",
-        "imagen": "imagenes/participantes/slaior.png"
+        "imagen": "imagenes/participantes/slaior.PNG"
     },
     {
         "nombre_real": "Ignacio Langoyo",
@@ -37,7 +37,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "7/28",
-        "imagen": "imagenes/participantes/gorbar.png"
+        "imagen": "imagenes/participantes/gorbar.PNG"
     },
     {
         "nombre_real": "Aldo Coleto Avendaño",
@@ -45,7 +45,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "7/28",
-        "imagen": "imagenes/participantes/aldo.png"
+        "imagen": "imagenes/participantes/aldo.PNG"
     },
     {
         "nombre_real": "Alejandro Acedo Viera",
@@ -53,7 +53,7 @@
         "rol": "miembro",
         "veterania": true,
         "dias_vivo": "16/28",
-        "imagen": "imagenes/participantes/whoppy.png"
+        "imagen": "imagenes/participantes/whoppy.PNG"
     },
     {
         "nombre_real": "Alejandro Izquierdo Burguillos",
@@ -61,7 +61,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "16/28",
-        "imagen": "imagenes/participantes/alepro.png"
+        "imagen": "imagenes/participantes/alepro.PNG"
     },
     {
         "nombre_real": "Miguel Ángel Martínez Fernández",
@@ -69,7 +69,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "18/28",
-        "imagen": "imagenes/participantes/mmartinez.png"
+        "imagen": "imagenes/participantes/mmartinez.PNG"
     },
     {
         "nombre_real": "Mateo González Conesa",
@@ -77,7 +77,7 @@
         "rol": "miembro",
         "veterania": true,
         "dias_vivo": "20/28",
-        "imagen": "imagenes/participantes/thematic13.png"
+        "imagen": "imagenes/participantes/thematic13.PNG"
     },
     {
         "nombre_real": "Pablo Gómez Ortega",
@@ -85,7 +85,7 @@
         "rol": "vip",
         "veterania": true,
         "dias_vivo": "21/28",
-        "imagen": "imagenes/participantes/horbox.png"
+        "imagen": "imagenes/participantes/horbox.PNG"
     },
     {
         "nombre_real": "Javier Lara Fernández",
@@ -93,7 +93,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "21/28",
-        "imagen": "imagenes/participantes/lulo.png"
+        "imagen": "imagenes/participantes/lulo.PNG"
     },
     {
         "nombre_real": "Alvaro López",
@@ -101,7 +101,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "21/28",
-        "imagen": "imagenes/participantes/lopez.png"
+        "imagen": "imagenes/participantes/lopez.PNG"
     },
     {
         "nombre_real": "Gonzalo Blanco Ruiz",
@@ -109,7 +109,7 @@
         "rol": "vip",
         "veterania": false,
         "dias_vivo": "21/28",
-        "imagen": "imagenes/participantes/gonzalety.png"
+        "imagen": "imagenes/participantes/gonzalety.PNG"
     },
     {
         "nombre_real": "Diego León Menaya",
@@ -117,7 +117,7 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "25/28",
-        "imagen": "imagenes/participantes/vertox.png"
+        "imagen": "imagenes/participantes/vertox.PNG"
     },
     {
         "nombre_real": "Javier Sánchez de Alvarado",
@@ -125,7 +125,7 @@
         "rol": "vip",
         "veterania": false,
         "dias_vivo": "superviviente",
-        "imagen": "imagenes/participantes/vertox.png"
+        "imagen": "imagenes/participantes/hojita379.PNG"
     },
     {
         "nombre_real": "Angel Sánchez Moreno",
@@ -133,6 +133,6 @@
         "rol": "miembro",
         "veterania": false,
         "dias_vivo": "superviviente",
-        "imagen": "imagenes/participantes/vertox.png"
+        "imagen": "imagenes/participantes/sanche.PNG"
     }
 ]
