@@ -1,0 +1,138 @@
+[
+    {
+        "nombre_real": "Sergio Díaz Pereira",
+        "nickname": "eyepro",
+        "rol": "administrador",
+        "veterania": true,
+        "dias_vivo": "-",
+        "imagen": "imagenes/participantes/eyepro.png"
+    },
+    {
+        "nombre_real": "Andrés Ballester Lozano",
+        "nickname": "andrip",
+        "rol": "moderador",
+        "veterania": false,
+        "dias_vivo": "-",
+        "imagen": "imagenes/participantes/vertox.png"
+    },
+    {
+        "nombre_real": "-",
+        "nickname": "terox",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "7/28",
+        "imagen": "imagenes/participantes/terox.png"
+    },
+    {
+        "nombre_real": "Adrián Carmona Gallardo",
+        "nickname": "slaior",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "7/28",
+        "imagen": "imagenes/participantes/slaior.png"
+    },
+    {
+        "nombre_real": "Ignacio Langoyo",
+        "nickname": "gorbar",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "7/28",
+        "imagen": "imagenes/participantes/gorbar.png"
+    },
+    {
+        "nombre_real": "Aldo Coleto Avendaño",
+        "nickname": "aldo",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "7/28",
+        "imagen": "imagenes/participantes/aldo.png"
+    },
+    {
+        "nombre_real": "Alejandro Acedo Viera",
+        "nickname": "whoppy",
+        "rol": "miembro",
+        "veterania": true,
+        "dias_vivo": "16/28",
+        "imagen": "imagenes/participantes/whoppy.png"
+    },
+    {
+        "nombre_real": "Alejandro Izquierdo Burguillos",
+        "nickname": "alepro",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "16/28",
+        "imagen": "imagenes/participantes/alepro.png"
+    },
+    {
+        "nombre_real": "Miguel Ángel Martínez Fernández",
+        "nickname": "mmartinez",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "18/28",
+        "imagen": "imagenes/participantes/mmartinez.png"
+    },
+    {
+        "nombre_real": "Mateo González Conesa",
+        "nickname": "thematic13",
+        "rol": "miembro",
+        "veterania": true,
+        "dias_vivo": "20/28",
+        "imagen": "imagenes/participantes/thematic13.png"
+    },
+    {
+        "nombre_real": "Pablo Gómez Ortega",
+        "nickname": "horbox",
+        "rol": "vip",
+        "veterania": true,
+        "dias_vivo": "21/28",
+        "imagen": "imagenes/participantes/horbox.png"
+    },
+    {
+        "nombre_real": "Javier Lara Fernández",
+        "nickname": "lulo",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "21/28",
+        "imagen": "imagenes/participantes/lulo.png"
+    },
+    {
+        "nombre_real": "Alvaro López",
+        "nickname": "López",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "21/28",
+        "imagen": "imagenes/participantes/lopez.png"
+    },
+    {
+        "nombre_real": "Gonzalo Blanco Ruiz",
+        "nickname": "gonzalety",
+        "rol": "vip",
+        "veterania": false,
+        "dias_vivo": "21/28",
+        "imagen": "imagenes/participantes/gonzalety.png"
+    },
+    {
+        "nombre_real": "Diego León Menaya",
+        "nickname": "vertox",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "25/28",
+        "imagen": "imagenes/participantes/vertox.png"
+    },
+    {
+        "nombre_real": "Javier Sánchez de Alvarado",
+        "nickname": "hojita379",
+        "rol": "vip",
+        "veterania": false,
+        "dias_vivo": "superviviente",
+        "imagen": "imagenes/participantes/vertox.png"
+    },
+    {
+        "nombre_real": "Angel Sánchez Moreno",
+        "nickname": "itsangelitotrap (el sanche)",
+        "rol": "miembro",
+        "veterania": false,
+        "dias_vivo": "superviviente",
+        "imagen": "imagenes/participantes/vertox.png"
+    }
+]

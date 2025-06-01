@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participantes - Instakill 3</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        #tabla-jugadores {
+            background: #181818;
+            color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 16px #0007;
+            font-family: 'Cinzel', 'Georgia', serif;
+            width: 100%;
+            min-width: 340px;
+        }
+        #tabla-jugadores th, #tabla-jugadores td {
+            padding: 0.7em 1em;
+            border: none;
+            text-align: center;
+        }
+        #tabla-jugadores th {
+            background: #7b0707;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.08em;
+            letter-spacing: 0.04em;
+            border-bottom: 3px solid #b30000;
+        }
+        #tabla-jugadores tbody tr:nth-child(even) {
+            background: #232323;
+        }
+        #tabla-jugadores tbody tr:nth-child(odd) {
+            background: #181818;
+        }
+        #tabla-jugadores td {
+            font-weight: 700;
+            color: #fff;
+            border-bottom: 1px solid #333;
+        }
+        #tabla-jugadores tr:hover td {
+            background: #b92a2a;
+            color: #fff;
+            transition: background 0.2s, color 0.2s;
+        }
+        .rol-miembro { color: #3ec300; }
+        .rol-vip { color: #e05ad7; }
+        .rol-administrador { color: #7b0707; }
+        .rol-moderador { color: #ff9800; }
+        .participante-lightbox-bg {
+            position: fixed;
+            inset: 0;
+            background: rgba(20, 10, 10, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 4000;
+            animation: fadeInBg 0.2s;
+        }
+        .participante-lightbox-img {
+            display: block;
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px #000b;
+            border: 6px solid #fff;
+            outline: 3px solid #b30000;
+            background: #7b0707;
+            animation: fadeInImg 0.2s;
+        }
+        .participante-lightbox-bg {
+            cursor: pointer;
+        }
+        @media (max-width: 900px) {
+            #tabla-jugadores th, #tabla-jugadores td {
+                padding: 0.5em 0.3em;
+                font-size: 0.97em;
+            }
+        }
+        @media (max-width: 600px) {
+            #tabla-jugadores, #tabla-jugadores thead, #tabla-jugadores tbody, #tabla-jugadores tr, #tabla-jugadores th, #tabla-jugadores td {
+                display: block;
+                width: 100%;
+            }
+            #tabla-jugadores thead {
+                display: none;
+            }
+            #tabla-jugadores tr {
+                margin-bottom: 1.2em;
+                border-radius: 10px;
+                box-shadow: 0 1px 6px #0004;
+                background: #222;
+            }
+            #tabla-jugadores td {
+                text-align: left;
+                padding: 0.7em 1em;
+                position: relative;
+                font-size: 1em;
+                border-bottom: none;
+            }
+            #tabla-jugadores td:before {
+                content: attr(data-label);
+                font-weight: 900;
+                color: #7b0707;
+                display: block;
+                margin-bottom: 0.2em;
+                font-size: 0.98em;
+                letter-spacing: 0.03em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="skull">
+                <i class="fas fa-skull-crossbones"></i>
+            </span>
+        </button>
+        <h1 class="infernal-title">
+            INSTAKILL 3
+        </h1>
+        <nav id="main-nav" class="menu-hidden">
+            <a 
+                href="https://youtube.com/playlist?list=PLy7Jyp234n08Pd7CMxV9msILZ6JeBKHNv&si=UhAekBsff0g0_qBk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="instakill1-link"
+                title="Ver todos los episodios de Instakill 1 en YouTube"
+            >
+                Instakill 1 <i class="fab fa-youtube" style="color:#ff3333;margin-left:0.4em;font-size:1em;vertical-align:middle;"></i>
+            </a>
+            <div class="nav-item-with-submenu">
+                <a href="#" id="instakill2-link" class="instakill2-link" title="Más sobre Instakill 2">
+                    Instakill 2 <i class="fas fa-chevron-down submenu-arrow"></i>
+                </a>
+                <ul class="submenu" id="submenu-instakill2">
+                    <li>
+                        <a href="https://instakill2.github.io" target="_blank" rel="noopener noreferrer">
+                            Web <i class="fas fa-globe" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recuerdos.html">
+                            Imágenes <i class="fas fa-image" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participantes.html">
+                            Participantes <i class="fas fa-users" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#prizes">Inscríbete ya</a>
+            <a href="#technical-characteristics">Reglas y normas</a>
+            <div class="menu-footer">
+                <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
+                <div style="display:flex;gap:10px;margin:0.5em 0;">
+                    <a href="https://www.instagram.com/sergioodiazz__/?next=%2F" title="Instagram" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/Instakill2SMP" title="Twitter" style="color:#fff;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://discord.gg/545EYbEC7N" title="Discord" style="color:#fff;"><i class="fab fa-discord"></i></a>
+                </div>
+                <p style="margin:0;font-size:0.8em;color:#888;">&copy; 2025 Instakill 3</p>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h2 style="text-align:center;margin-top:0.5em;">Participantes de Instakill 2</h2>
+        <p style="text-align:center;color:#7b0707;">Listado de jugadores y su información</p>
+        <div id="tabla-jugadores-container" style="overflow-x:auto;">
+            <table id="tabla-jugadores">
+                <thead>
+                    <tr>
+                        <th>Nombre real</th>
+                        <th>Nickname</th>
+                        <th>Rol</th>
+                        <th>Veteranía</th>
+                        <th>Días vivo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se insertarán los jugadores con JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Instakill 3. Desarrollo web por Sergio Díaz Pereira</p>
+    </footer>
+
+    <!-- Lightbox para imagen de participante -->
+    <div id="participante-lightbox" style="display:none;">
+        <div class="participante-lightbox-bg" id="participante-lightbox-bg">
+            <img id="participante-lightbox-img" class="participante-lightbox-img" src="" alt="Imagen del participante">
+        </div>
+    </div>
+
+    <script>
+        // Menú hamburguesa y submenú igual que en otras páginas
+        document.getElementById('menu-toggle').onclick = function() {
+            document.getElementById('main-nav').classList.toggle('menu-hidden');
+            this.classList.toggle('open');
+        };
+
+        const instakill2Link = document.getElementById('instakill2-link');
+        const submenu2 = document.getElementById('submenu-instakill2');
+        const submenuArrow2 = instakill2Link.querySelector('.submenu-arrow');
+        let submenu2Open = false;
+
+        instakill2Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            submenu2.classList.toggle('open');
+            submenu2Open = !submenu2Open;
+            submenuArrow2.classList.toggle('rotated', submenu2Open);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (
+                submenu2Open &&
+                !instakill2Link.contains(e.target) &&
+                !submenu2.contains(e.target)
+            ) {
+                submenu2.classList.remove('open');
+                submenuArrow2.classList.remove('rotated');
+                submenu2Open = false;
+            }
+        });
+
+        // Cargar datos de jugadores desde JSON y añadir funcionalidad de imagen
+        fetch('jugadoresIK2.json')
+            .then(response => response.json())
+            .then(jugadores => {
+                const tbody = document.querySelector('#tabla-jugadores tbody');
+                // Lista de nicks a los que NO se les abre imagen
+                const noLightbox = ['eyepro', 'andrip', 'hojita379', 'itsangelitotrap (el sanche)'];
+                jugadores.forEach((j, idx) => {
+                    let rolClass = '';
+                    let rolTexto = j.rol.charAt(0).toUpperCase() + j.rol.slice(1);
+                    switch (j.rol.toLowerCase()) {
+                        case 'miembro':
+                            rolClass = 'rol-miembro';
+                            break;
+                        case 'vip':
+                            rolClass = 'rol-vip';
+                            break;
+                        case 'administrador':
+                            rolClass = 'rol-administrador';
+                            break;
+                        case 'moderador':
+                            rolClass = 'rol-moderador';
+                            break;
+                    }
+                    const tr = document.createElement('tr');
+                    tr.style.cursor = noLightbox.includes(j.nickname) ? "default" : "pointer";
+                    tr.innerHTML = `
+                        <td data-label="Nombre real">${j.nombre_real}</td>
+                        <td data-label="Nickname">${j.nickname}</td>
+                        <td data-label="Rol"><span class="${rolClass}">${rolTexto}</span></td>
+                        <td data-label="Veteranía">${j.veterania ? 'Sí' : 'No'}</td>
+                        <td data-label="Días vivo">${j.dias_vivo}</td>
+                    `;
+                    // Solo añadir evento si el jugador no está en la lista de noLightbox
+                    if (!noLightbox.includes(j.nickname)) {
+                        const imgPath = j.imagen ? j.imagen : `imagenes/participantes/${j.nickname}.png`;
+                        tr.addEventListener('click', function() {
+                            const lightbox = document.getElementById('participante-lightbox');
+                            const lightboxImg = document.getElementById('participante-lightbox-img');
+                            lightboxImg.src = imgPath;
+                            lightboxImg.alt = `Imagen de ${j.nickname}`;
+                            lightbox.style.display = 'block';
+                        });
+                    }
+                    tbody.appendChild(tr);
+                });
+            });
+
+        // Cerrar lightbox al hacer click fuera de la imagen
+        document.getElementById('participante-lightbox').addEventListener('click', function(e) {
+            if (e.target.classList.contains('participante-lightbox-bg')) {
+                this.style.display = 'none';
+                document.getElementById('participante-lightbox-img').src = '';
+            }
+        });
+    </script>
+</body>
+</html>
