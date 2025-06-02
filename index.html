@@ -7,20 +7,94 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+        .header-flex-ik3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: relative;
+        }
+        .ik3-title-img {
+            height: 48px;
+            width: auto;
+            max-width: 12vw;
+            min-width: 32px;
+            margin: 0 2vw;
+            vertical-align: middle;
+            transition: height 0.2s, transform 0.2s, filter 0.2s;
+            cursor: pointer;
+        }
+        .ik3-title-img:hover {
+            transform: scale(1.12) rotate(-6deg);
+            filter: drop-shadow(0 2px 8px #ff2e2e88) brightness(1.08);
+        }
+        .ik3-title-img-left,
+        .ik3-title-img-right {
+            display: none;
+        }
+        .header-title-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+        @media (min-width: 901px) {
+            .header-flex-ik3 {
+                justify-content: space-between;
+                padding: 0 3vw;
+            }
+            .ik3-title-img-left,
+            .ik3-title-img-right {
+                display: block;
+            }
+            .ik3-title-img-center {
+                display: none;
+            }
+            /* El botón menú sigue como estaba, no se toca */
+        }
+        @media (max-width: 900px) {
+                .header-title-center {
+                    position: relative;
+                }
+                .ik3-title-img-center {
+                    position: absolute;
+                    right: 0px;   /* mueve un poco a la derecha */
+                    top: -11px;      /* sube unos píxeles */
+                    height: 55px;
+                    max-width: 30vw;
+                }
+        }
+        @media (max-width: 600px) {
+                .ik3-title-img-center {
+                    position: absolute;
+                    top: -8px;       /* sube unos píxeles */
+                    height: 45px;
+                    max-width: 32vw;
+                }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="skull">
-                <i class="fas fa-skull-crossbones"></i>
-            </span>
-        </button>
-        <h1 class="infernal-title">
-            INSTAKILL 3
-        </h1>
+        <div class="header-flex-ik3">
+            <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-left" id="ik3-img-left">
+            <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="skull">
+                    <i class="fas fa-skull-crossbones"></i>
+                </span>
+            </button>
+            <div class="header-title-center">
+                <h1 class="infernal-title" style="margin:0;">
+                    INSTAKILL 3
+                </h1>
+                <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-center" id="ik3-img-center">
+            </div>
+            <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-right" id="ik3-img-right">
+        </div>
         <nav id="main-nav" class="menu-hidden">
             <a 
                 href="https://youtube.com/playlist?list=PLy7Jyp234n08Pd7CMxV9msILZ6JeBKHNv&si=UhAekBsff0g0_qBk" 
@@ -54,7 +128,7 @@
                 </ul>
             </div>
             <a href="#prizes">Inscríbete ya</a>
-            <a href="#technical-characteristics">Reglas y normas</a>
+            <a href="Reglas y normas de Instakill 3.pdf">Reglas y normas</a>
             <div class="menu-footer">
                 <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
                 <div style="display:flex;gap:10px;margin:0.5em 0;">
@@ -107,6 +181,13 @@
                 submenuArrow2.classList.remove('rotated');
                 submenu2Open = false;
             }
+        });
+
+        // Volver a index.html al hacer click en los iconos
+        document.querySelectorAll('.ik3-title-img').forEach(img => {
+            img.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
         });
     </script>
 </body>
