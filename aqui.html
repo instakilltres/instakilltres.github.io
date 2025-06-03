@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clave de inscripción - Instakill 3</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="./imagenes/instakill2iconbuenobueno (1).png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        background: #232326;
+        color: #fff;
+        font-family: 'Cinzel', serif;
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .header-flex-ik3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+    .ik3-title-img {
+        height: 48px;
+        width: auto;
+        max-width: 12vw;
+        min-width: 32px;
+        margin: 0 2vw;
+        vertical-align: middle;
+        transition: height 0.2s, transform 0.2s, filter 0.2s;
+        cursor: pointer;
+    }
+    .ik3-title-img:hover {
+        transform: scale(1.12) rotate(-6deg);
+        filter: drop-shadow(0 2px 8px #ff2e2e88) brightness(1.08);
+    }
+    .ik3-title-img-left,
+    .ik3-title-img-right {
+        display: none;
+    }
+    .header-title-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+    }
+    @media (min-width: 901px) {
+        .header-flex-ik3 {
+            justify-content: space-between;
+            padding: 0 3vw;
+        }
+        .ik3-title-img-left,
+        .ik3-title-img-right {
+            display: block;
+        }
+        .ik3-title-img-center {
+            display: none;
+        }
+    }
+    @media (max-width: 900px) {
+        .header-title-center {
+            position: relative;
+        }
+        .ik3-title-img-center {
+            position: absolute;
+            right: 0px;
+            top: -11px;
+            height: 55px;
+            max-width: 30vw;
+        }
+    }
+    @media (max-width: 600px) {
+        .ik3-title-img-center {
+            position: absolute;
+            top: -8px;
+            height: 45px;
+            max-width: 32vw;
+        }
+    }
+    /* --- CLAVE ESTILO --- */
+    .clave-container {
+        max-width: 480px;
+        margin: 4em auto 2em auto;
+        background: #232326;
+        border-radius: 18px;
+        /* box-shadow: 0 2px 16px #111; */ /* Quitado el sombreado */
+        padding: 2.5em 2em 2em 2em;
+        text-align: center;
+    }
+    .clave-title {
+        color: #c82323;
+        font-size: 2em;
+        margin-bottom: 0.5em;
+        letter-spacing: 0.03em;
+        font-family: 'Cinzel', serif;
+        /* Efecto de sombra y degradado como el título principal */
+        background: linear-gradient(180deg, #c82323 60%, #7a1010 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow:
+            0 2px 8px #000a,
+            0 1px 0 #fff2,
+            0 0px 16px #c8232380;
+    }
+    .clave-icon {
+        font-size: 2.5em;
+        color: #fffb00;
+        margin-bottom: 0.3em;
+    }
+    .clave-label {
+        font-size: 1.1em;
+        color: #fff;
+        margin-bottom: 0.7em;
+        display: block;
+        font-family: Arial, sans-serif;
+    }
+    .clave-box {
+        font-family: monospace;
+        font-size: 1.35em;
+        color: #fffb00;
+        background: #19191b;
+        padding: 0.5em 1.2em;
+        border-radius: 8px;
+        letter-spacing: 0.12em;
+        margin: 0.5em 0 1.2em 0;
+        display: inline-block;
+        user-select: all;
+        box-shadow: 0 2px 8px #0004;
+    }
+    .clave-refresh {
+        display: inline-block;
+        margin-top: 0.5em;
+        color: #e85aff;
+        background: none;
+        border: none;
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: color 0.2s;
+        font-family: Arial, sans-serif;
+    }
+    .clave-refresh:hover {
+        color: #fffb00;
+    }
+    .menu-footer {
+        margin-top: 1.5em;
+        border-top: 1px solid #232326;
+        padding-top: 1em;
+        font-family: Arial, sans-serif;
+    }
+    #main-nav,
+    #main-nav a,
+    #main-nav .submenu,
+    #main-nav .submenu a,
+    #main-nav .nav-item-with-submenu > a {
+        font-family: Arial, sans-serif !important;
+    }
+    footer {
+        font-family: Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-flex-ik3">
+            <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-left" id="ik3-img-left">
+            <button id="menu-toggle" aria-label="Abrir menú" style="position: relative;">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="skull">
+                    <i class="fas fa-skull-crossbones"></i>
+                </span>
+            </button>
+            <div class="header-title-center">
+                <h1 class="infernal-title" style="margin:0;">
+                    INSTAKILL 3
+                </h1>
+                <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-center" id="ik3-img-center">
+            </div>
+            <img src="imagenes/instakill2iconbuenobueno (1).png" alt="Icono Instakill 2" class="ik3-title-img ik3-title-img-right" id="ik3-img-right">
+        </div>
+        <nav id="main-nav" class="menu-hidden">
+            <a 
+                href="https://youtube.com/playlist?list=PLy7Jyp234n08Pd7CMxV9msILZ6JeBKHNv&si=UhAekBsff0g0_qBk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="instakill1-link"
+                title="Ver todos los episodios de Instakill 1 en YouTube"
+            >
+                Instakill 1 <i class="fab fa-youtube" style="color:#ff3333;margin-left:0.4em;font-size:1em;vertical-align:middle;"></i>
+            </a>
+            <div class="nav-item-with-submenu">
+                <a id="instakill2-link" class="instakill2-link" title="Más sobre Instakill 2">
+                    Instakill 2 <i class="fas fa-chevron-down submenu-arrow"></i>
+                </a>
+                <ul class="submenu" id="submenu-instakill2">
+                    <li>
+                        <a href="https://instakill2.github.io" target="_blank" rel="noopener noreferrer">
+                            Web <i class="fas fa-globe" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="recuerdos.html">
+                            Imágenes <i class="fas fa-image" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="participantes.html">
+                            Participantes <i class="fas fa-users" style="margin-left:0.5em;font-size:0.95em;vertical-align:middle;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a href="Formulario Instakill 3.zip">Inscríbete ya</a>
+            <a href="Reglas y normas de Instakill 3.pdf">Reglas y normas</a>
+            <div class="menu-footer">
+                <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
+                <div style="display:flex;gap:10px;margin:0.5em 0;">
+                    <a href="https://www.instagram.com/sergioodiazz__/?next=%2F" title="Instagram" style="color:#fff;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/Instakill2SMP" title="Twitter" style="color:#fff;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://discord.gg/545EYbEC7N" title="Discord" style="color:#fff;"><i class="fab fa-discord"></i></a>
+                </div>
+                <p style="margin:0;font-size:0.8em;color:#888;">&copy; 2025 Instakill 3</p>
+            </div>
+        </nav>
+    </header>
+
+    <section id="main-content" style="max-width:900px;margin:2.5em auto 2em auto;padding:0 1em;">
+        <div class="clave-container">
+            <div class="clave-icon">
+                <i class="fas fa-key"></i>
+            </div>
+            <div class="clave-title">Clave de inscripción</div>
+            <span class="clave-label" style="font-family: Arial, sans-serif; color: #fff;">Copia y guarda esta clave, es única para tu sesión:</span>
+            <span id="clave-inscripcion" class="clave-box"></span>
+            <br>
+            <button class="clave-refresh" onclick="generarYNuevaClave()" style="font-family: Arial, sans-serif; color: #e85aff;">
+                <i class="fas fa-sync-alt"></i> Nueva clave
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Instakill 3. Desarrollo web por Sergio Díaz Pereira</p>
+    </footer>
+
+    <script>
+        // Mostrar/ocultar menú y animar botón hamburguesa/cambiar a calavera
+        document.getElementById('menu-toggle').onclick = function() {
+            document.getElementById('main-nav').classList.toggle('menu-hidden');
+            this.classList.toggle('open');
+        };
+
+        // Submenú Instakill 2
+        const instakill2Link = document.getElementById('instakill2-link');
+        const submenu2 = document.getElementById('submenu-instakill2');
+        const submenuArrow2 = instakill2Link.querySelector('.submenu-arrow');
+        let submenu2Open = false;
+
+        instakill2Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            submenu2.classList.toggle('open');
+            submenu2Open = !submenu2Open;
+            submenuArrow2.classList.toggle('rotated', submenu2Open);
+        });
+
+        // Cerrar submenú al hacer click fuera
+        document.addEventListener('click', function(e) {
+            if (
+                submenu2Open &&
+                !instakill2Link.contains(e.target) &&
+                !submenu2.contains(e.target)
+            ) {
+                submenu2.classList.remove('open');
+                submenuArrow2.classList.remove('rotated');
+                submenu2Open = false;
+            }
+        });
+
+        // Volver a index.html al hacer click en los iconos
+        document.querySelectorAll('.ik3-title-img').forEach(img => {
+            img.addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        });
+
+        // Generar clave aleatoria de 20 caracteres y mostrarla
+        function generarClave(longitud) {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let clave = '';
+            for (let i = 0; i < longitud; i++) {
+                clave += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return clave;
+        }
+        function generarYNuevaClave() {
+            const clave = generarClave(20);
+            document.getElementById('clave-inscripcion').textContent = clave;
+        }
+        document.addEventListener('DOMContentLoaded', generarYNuevaClave);
+    </script>
+</body>
+</html>

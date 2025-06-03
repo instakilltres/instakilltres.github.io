@@ -1,0 +1,93 @@
+[
+    {
+        "nick": "eyepro",
+        "nombre_real": "Sergio",
+        "fecha_inscripcion": "2025-05-29",
+        "rol": "admin",
+        "veterania": "veterano +",
+        "estado": "Vivo",
+        "avatar": "skins/eyeproIK3.png"
+    },
+    {
+        "nick": "marisampv",
+        "nombre_real": "Maria Isabel ",
+        "fecha_inscripcion": "2025-05-29",
+        "rol": "VIP",
+        "veterania": "no",
+        "estado": "Vivo",
+        "avatar": "skins/marisa.png"
+    },
+    {
+        "nick": "pizarro",
+        "nombre_real": "Angel",
+        "fecha_inscripcion": "2025-05-30",
+        "rol": "miembro",
+        "veterania": "no",
+        "estado": "Vivo",
+        "avatar": "skins/pizarro.jpg"
+    },
+    {
+        "nick": "horbox",
+        "nombre_real": "Pablo",
+        "fecha_inscripcion": "2025-06-01",
+        "rol": "VIP",
+        "veterania": "veterano +",
+        "estado": "Vivo",
+        "avatar": "skins/horbox.png"
+    },
+    {
+        "nick": "vegetta777",
+        "nombre_real": "Samu",
+        "fecha_inscripcion": "2025-06-01",
+        "rol": "VIP",
+        "veterania": "no",
+        "estado": "Vivo",
+        "avatar": "skins/vegetta777.jpg"
+    },
+    {
+        "nick": "whoppy",
+        "nombre_real": "Alejandro",
+        "fecha_inscripcion": "2025-06-01",
+        "rol": "miembro",
+        "veterania": "veterano +",
+        "estado": "Vivo",
+        "avatar": "skins/whoppy.png"
+    },
+    {
+        "nick": "hojita379",
+        "nombre_real": "Javier",
+        "fecha_inscripcion": "2025-06-01",
+        "rol": "miembro",
+        "veterania": "veterano",
+        "estado": "Vivo",
+        "avatar": "skins/steve.jpg"
+    },
+    {
+        "nick": "elsanche",
+        "nombre_real": "Angel",
+        "fecha_inscripcion": "2025-06-02",
+        "rol": "miembro",
+        "veterania": "veterano",
+        "estado": "Vivo",
+        "avatar": "skins/sanche.jpg"
+    },
+    {
+        "nick": "cerezo",
+        "nombre_real": "Francisco Javier",
+        "fecha_inscripcion": "2025-06-02",
+        "rol": "miembro",
+        "veterania": "no",
+        "estado": "Vivo",
+        "avatar": "skins/cerezo.png"
+    },
+    {
+        "nick": "collantes",
+        "nombre_real": "Alejandro",
+        "fecha_inscripcion": "2025-06-03",
+        "rol": "miembro",
+        "veterania": "no",
+        "estado": "Vivo",
+        "avatar": "skins/steve.jpg"
+    }
+
+]

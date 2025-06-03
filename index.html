@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instakill 3</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="icon" href="./imagenes/instakill2iconbuenobueno (1).png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -39,6 +40,43 @@
             align-items: center;
             flex: 1;
         }
+        /* Avatar cuadrado para la tabla de jugadores */
+        .avatar-cuadrado {
+            width: 32px;
+            height: 32px;
+            object-fit: cover;
+            border-radius: 6px;
+            vertical-align: middle;
+            margin-right: 0.7em;
+        }
+        /* Colores para los roles */
+        .rol-miembro {
+            color: #7ed957;
+            font-weight: bold;
+        }
+        .rol-vip {
+            color: #e85aff;
+            font-weight: bold;
+        }
+        .rol-moderador {
+            color: #ff9900;
+            font-weight: bold;
+        }
+        .rol-administrador {
+            color: #ae0000;
+            font-weight: bold;
+        }
+        .veterania-no {
+            color: #bbb;
+        }
+        .veterania-veterano {
+            color: #fffb00;
+            font-weight: bold;
+        }
+        .veterania-veterano-plus {
+            color: #ff8400;
+            font-weight: bold;
+        }
         @media (min-width: 901px) {
             .header-flex-ik3 {
                 justify-content: space-between;
@@ -51,27 +89,131 @@
             .ik3-title-img-center {
                 display: none;
             }
-            /* El botón menú sigue como estaba, no se toca */
         }
         @media (max-width: 900px) {
-                .header-title-center {
-                    position: relative;
-                }
-                .ik3-title-img-center {
-                    position: absolute;
-                    right: 0px;   /* mueve un poco a la derecha */
-                    top: -11px;      /* sube unos píxeles */
-                    height: 55px;
-                    max-width: 30vw;
-                }
+            .header-title-center {
+                position: relative;
+            }
+            .ik3-title-img-center {
+                position: absolute;
+                right: 0px;
+                top: -11px;
+                height: 55px;
+                max-width: 30vw;
+            }
         }
         @media (max-width: 600px) {
-                .ik3-title-img-center {
-                    position: absolute;
-                    top: -8px;       /* sube unos píxeles */
-                    height: 45px;
-                    max-width: 32vw;
-                }
+            .ik3-title-img-center {
+                position: absolute;
+                top: -8px;
+                height: 45px;
+                max-width: 32vw;
+            }
+        }
+        /* Efecto de degradado y sombra para INTRODUCCIÓN */
+        .introduccion-title {
+            color: #c82323;
+            font-size: 2.2em;
+            margin-bottom: 1em;
+            letter-spacing: 0.03em;
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #c82323 60%, #7a1010 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow:
+                0 2px 8px #000a,
+                0 1px 0 #fff2,
+                0 0px 16px #c8232380;
+            text-align: center;
+            margin-top: 0;
+        }
+        .participantes-title {
+            color: #c82323;
+            font-size: 1.5em;
+            letter-spacing: 0.02em;
+            font-family: 'Cinzel', serif;
+            background: linear-gradient(180deg, #c82323 60%, #7a1010 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow:
+                0 2px 8px #000a,
+                0 1px 0 #fff2,
+                0 0px 16px #c8232380;
+            text-align: center;
+            margin-bottom: 1em;
+            margin-top: 0;
+        }
+        /* Responsive para los bloques del section */
+        @media (max-width: 900px) {
+            #main-content > div {
+                padding: 1.2em 0.5em 1em 0.5em !important;
+            }
+            .premio-card,
+            .caracteristicas-card,
+            .inscripcion-card {
+                min-width: 180px !important;
+                max-width: 100% !important;
+                padding: 1.2em 0.7em !important;
+            }
+        }
+        @media (max-width: 700px) {
+            #tabla-jugadores-ik3 th,
+            #tabla-jugadores-ik3 td {
+                padding: 0.5em 0.4em !important;
+                font-size: 0.97em;
+            }
+            #tabla-jugadores-ik3 {
+                font-size: 0.97em;
+            }
+        }
+        @media (max-width: 600px) {
+            .premio-card,
+            .caracteristicas-card,
+            .inscripcion-card {
+                padding: 1em 0.3em !important;
+            }
+            .introduccion-title,
+            .participantes-title {
+                font-size: 1.15em !important;
+            }
+        }
+        @media (max-width: 520px) {
+            #tabla-jugadores-ik3 th,
+            #tabla-jugadores-ik3 td {
+                padding: 0.35em 0.2em !important;
+                font-size: 0.92em;
+            }
+            #tabla-jugadores-ik3 {
+                font-size: 0.92em;
+            }
+        }
+        /* Responsive para cards reutilizables */
+        .premio-card,
+        .caracteristicas-card,
+        .inscripcion-card {
+            flex: 1 1 260px;
+            min-width: 240px;
+            max-width: 360px;
+            background: #232326;
+            border-radius: 18px;
+            box-shadow: 0 2px 10px #1114;
+            padding: 2em 1.2em 1.5em 1.2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5em;
+        }
+        .inscripcion-card {
+            max-width: 700px;
+            border-radius: 14px;
+            padding: 1.7em 1.5em;
+        }
+        .caracteristicas-card {
+            max-width: 700px;
+            border-radius: 14px;
+            padding: 1.7em 1.5em;
         }
     </style>
 </head>
@@ -106,7 +248,7 @@
                 Instakill 1 <i class="fab fa-youtube" style="color:#ff3333;margin-left:0.4em;font-size:1em;vertical-align:middle;"></i>
             </a>
             <div class="nav-item-with-submenu">
-                <a href="#" id="instakill2-link" class="instakill2-link" title="Más sobre Instakill 2">
+                <a id="instakill2-link" class="instakill2-link" title="Más sobre Instakill 2">
                     Instakill 2 <i class="fas fa-chevron-down submenu-arrow"></i>
                 </a>
                 <ul class="submenu" id="submenu-instakill2">
@@ -127,7 +269,7 @@
                     </li>
                 </ul>
             </div>
-            <a href="#prizes">Inscríbete ya</a>
+            <a href="Formulario Instakill 3.zip">Inscríbete ya</a>
             <a href="Reglas y normas de Instakill 3.pdf">Reglas y normas</a>
             <div class="menu-footer">
                 <p style="margin:0;font-size:0.9em;color:#bbb;">Síguenos:</p>
@@ -141,54 +283,229 @@
         </nav>
     </header>
 
-    <section id="introduction">
-        <h2>Introducción</h2>
-        <p>¿Qué es Instakill 3 y cómo se juega?</p>
-        <img src="path/to/image.jpg" alt="Imagen sobre Instakill">
-    </section>
-    <footer>
-        <p>&copy; 2025 Instakill 3. Desarrollo web por Sergio Díaz Pereira</p>
-    </footer>
+<section id="main-content" style="max-width:900px;margin:2.5em auto 2em auto;padding:0 1em;">
+    <div style="background:#19191b;border-radius:18px;padding:2em 1.5em 1.5em 1.5em;box-shadow:0 2px 16px #111;">
+        <!-- INTRODUCCIÓN -->
+        <h2 class="introduccion-title">
+            INTRODUCCIÓN
+        </h2>
+        <div style="max-width:700px;margin:0 auto 2.5em auto;">
+            <p style="font-size:1.18em;line-height:1.7;text-align:justify;color:#fff;font-family:'Cinzel',serif;margin-bottom:0.8em;">
+                Instakill 3 es un torneo de Minecraft PvE donde los jugadores lucharán día tras día por sobrevivir a un infierno hecho gameplay. En Instakill 3 los jugadores solo tienen 
+                <b style="color:#c82323;">una vida</b>, por lo que si mueren no podrán volver a jugar. Cada semana la dificultad del servidor irá aumentando, hasta el nivel donde queden solo los más fuertes en pie.
+            </p>
+        </div>
+        <hr style="border:0;border-top:2px solid #c82323;margin:2.5em 0 2.5em 0;opacity:0.22;">
+        <!-- PREMIOS -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:3em;">
+            <!-- Premio Supervivientes -->
+            <div style="flex:1 1 260px;min-width:240px;max-width:360px;background:#232326;border-radius:18px;box-shadow:0 2px 10px #1114;padding:2em 1.2em 1.5em 1.2em;display:flex;flex-direction:column;align-items:center; margin-bottom:1.5em;" class="premio-card">
+                <div style="margin-bottom:1em;">
+                    <span style="display:inline-block;background:#35353a;border-radius:50%;padding:0.6em;">
+                        <i class="fas fa-medal" style="color:#f7d358;font-size:2em;" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <h3 style="color:#c82323;font-family:'Cinzel',serif;font-size:1.35em;margin-top:0;margin-bottom:0.7em;text-align:center;letter-spacing:0.01em;">
+                    PREMIO SUPERVIVIENTES
+                </h3>
+                <p style="font-size:1.09em;text-align:center;margin:0 0 1.2em 0;color:#fff;">
+                    Los supervivientes de Instakill 3 serán quienes logren sobrevivir hasta el final.<br>
+                    Recibirán<span style="font-weight:bold;color:#c82323;">
+                        10€ </span> + <span style="font-weight:bold;color:#c82323;">un diploma</span>
+                    </span>
+                </p>
+            </div>
+            <!-- Premio Ganadores -->
+            <div style="flex:1 1 260px;min-width:240px;max-width:360px;background:#232326;border-radius:18px;box-shadow:0 2px 10px #1114;padding:2em 1.2em 1.5em 1.2em;display:flex;flex-direction:column;align-items:center; margin-bottom:1.5em;" class="premio-card">
+                <div style="margin-bottom:1em;">
+                    <span style="display:inline-block;background:#35353a;border-radius:50%;padding:0.6em;">
+                        <i class="fas fa-trophy" style="color:#ffd700;font-size:2em;" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <h3 style="color:#c82323;font-family:'Cinzel',serif;font-size:1.35em;margin-top:0;margin-bottom:0.7em;text-align:center;letter-spacing:0.01em;">
+                    PREMIO GANADORES
+                </h3>
+                <p style="font-size:1.09em;text-align:center;margin:0 0 1.2em 0;color:#fff;">
+                    Los ganadores serán quienes, además de sobrevivir hasta el final, realicen la misión final.
+                    Recibirán <span style="font-weight:bold;color:#c82323;">
+                        50€
+                    </span> + <span style="font-weight:bold;color:#c82323;">un trofeo</span>
+                </p>
+            </div>
+        </div>
+        <!-- INSCRIPCIONES -->
+        <div style="margin-top:2.5em;display:flex;flex-wrap:wrap;justify-content:center;gap:2em;">
+            <div style="flex:1 1 340px;min-width:260px;max-width:700px;background:#232326;border-radius:14px;box-shadow:0 2px 10px #1114;padding:1.7em 1.5em;display:flex;flex-direction:column;align-items:center;" class="inscripcion-card">
+                <div style="margin-bottom:1em;">
+                    <span style="display:inline-block;background:#35353a;border-radius:50%;padding:0.6em;">
+                        <i class="fas fa-user-plus" style="font-size:2em;color:#007bff;" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <h3 style="color:#c82323;font-family:'Cinzel',serif;font-size:1.18em;margin-top:0;margin-bottom:0.7em;text-align:center;">INSCRIPCIONES</h3>
+                <p style="font-size:1.07em;text-align:center;margin:0 0 1.2em 0;color:#fff;">
+                    Para inscribirse se necesita una clave de inscripción, que se pueden generar 
+                    <a href="aqui.html" style="color:#c82323;text-decoration:underline;">aquí</a>.
+                    Después, descarga el contenido del apartado <b>"Inscríbete ya"</b>, rellena y envía el formulario.<br>
+                    Al inscribirte, se dan por hecho la aceptación y cumplimiento de las normas del apartado <b>"Reglas y normas"</b>.
+                    A partir del 27/06/2026 no se aceptarán nuevos participantes.<br>
+                    El <b style="color:#c82323;">1/7/2026</b> iniciará el torneo.
+                </p>
+            </div>
+        </div>
+        <!-- CARACTERÍSTICAS TÉCNICAS -->
+        <div style="margin-top:2.5em;display:flex;flex-wrap:wrap;justify-content:center;gap:2em;">
+            <div style="flex:1 1 340px;min-width:260px;max-width:700px;background:#232326;border-radius:14px;box-shadow:0 2px 10px #1114;padding:1.7em 1.5em;display:flex;flex-direction:column;align-items:center;" class="caracteristicas-card">
+                <div style="margin-bottom:1em;">
+                    <span style="display:inline-block;background:#35353a;border-radius:50%;padding:0.6em;">
+                        <i class="fas fa-server" style="font-size:2em;color:#dedede;" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <h3 style="color:#c82323;font-family:'Cinzel',serif;font-size:1.18em;margin-top:0;margin-bottom:0.7em;text-align:center;">
+                    CARACTERÍSTICAS TÉCNICAS
+                </h3>
+                <p style="font-size:1.07em;text-align:center;margin:0 0 1.2em 0;color:#fff;">
+                    Al ser un servidor de muchos usuarios y con modificaciones no optimizadas, se ha dedicado gran parte del presupuesto a un servidor de excelentes especificaciones:<br>
+                    <span style="display:inline-block;margin-top:0.7em;">
+                        <i class="fas fa-microchip" style="color:#f7d358;" aria-label="Procesador"></i>
+                        <b style="color:#fff;">Intel Core i9-13900K</b>
+                    </span>
+                    <br>
+                    <span style="display:inline-block;margin-top:0.4em;">
+                        <i class="fas fa-memory" style="color:#7ed957;" aria-label="Memoria RAM"></i>
+                        <b style="color:#fff;">32 GB DDR5</b>
+                    </span>
+                    <br>
+                    <span style="display:inline-block;margin-top:0.4em;">
+                        <i class="fas fa-hdd" style="color:#5bc0eb;" aria-label="Almacenamiento SSD"></i>
+                        <b style="color:#fff;">NVMe SSD de 250 GB</b>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!-- PARTICIPANTES ACTUALES -->
+        <div style="margin-top:2.5em;">
+            <h2 class="participantes-title">
+                Participantes actuales
+            </h2>
+            <div style="overflow-x:auto;">
+                <table id="tabla-jugadores-ik3" style="width:100%;background:#232326;color:#fff;border-radius:10px;box-shadow:0 2px 10px #1114;border-collapse:collapse;">
+                    <thead>
+                        <tr style="background:#29292c;">
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Nick</th>
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Nombre real</th>
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Fecha inscripción</th>
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Rol</th>
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Veteranía</th>
+                            <th style="padding:0.7em 1em;text-align:left;font-family:'Cinzel',serif;">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se insertarán los jugadores por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Elemento invisible para forzar scroll y dejar ver la tabla completa -->
+<div style="height:120px;pointer-events:none;user-select:none;opacity:0;"></div>
+<footer>
+    <p>&copy; 2025 Instakill 3. Desarrollo web por Sergio Díaz Pereira</p>
+</footer>
 
-    <script>
-        // Mostrar/ocultar menú y animar botón hamburguesa/cambiar a calavera
-        document.getElementById('menu-toggle').onclick = function() {
-            document.getElementById('main-nav').classList.toggle('menu-hidden');
-            this.classList.toggle('open');
-        };
+<script>
+    // Mostrar/ocultar menú y animar botón hamburguesa/cambiar a calavera
+    document.getElementById('menu-toggle').onclick = function() {
+        document.getElementById('main-nav').classList.toggle('menu-hidden');
+        this.classList.toggle('open');
+    };
 
-        // Submenú Instakill 2
-        const instakill2Link = document.getElementById('instakill2-link');
-        const submenu2 = document.getElementById('submenu-instakill2');
-        const submenuArrow2 = instakill2Link.querySelector('.submenu-arrow');
-        let submenu2Open = false;
+    // Submenú Instakill 2
+    const instakill2Link = document.getElementById('instakill2-link');
+    const submenu2 = document.getElementById('submenu-instakill2');
+    const submenuArrow2 = instakill2Link.querySelector('.submenu-arrow');
+    let submenu2Open = false;
 
-        instakill2Link.addEventListener('click', function(e) {
-            e.preventDefault();
-            submenu2.classList.toggle('open');
-            submenu2Open = !submenu2Open;
-            submenuArrow2.classList.toggle('rotated', submenu2Open);
+    instakill2Link.addEventListener('click', function(e) {
+        e.preventDefault();
+        submenu2.classList.toggle('open');
+        submenu2Open = !submenu2Open;
+        submenuArrow2.classList.toggle('rotated', submenu2Open);
+    });
+
+    // Cerrar submenú al hacer click fuera
+    document.addEventListener('click', function(e) {
+        if (
+            submenu2Open &&
+            !instakill2Link.contains(e.target) &&
+            !submenu2.contains(e.target)
+        ) {
+            submenu2.classList.remove('open');
+            submenuArrow2.classList.remove('rotated');
+            submenu2Open = false;
+        }
+    });
+
+    // Volver a index.html al hacer click en los iconos
+    document.querySelectorAll('.ik3-title-img').forEach(img => {
+        img.addEventListener('click', () => {
+            window.location.href = 'index.html';
         });
+    });
 
-        // Cerrar submenú al hacer click fuera
-        document.addEventListener('click', function(e) {
-            if (
-                submenu2Open &&
-                !instakill2Link.contains(e.target) &&
-                !submenu2.contains(e.target)
-            ) {
-                submenu2.classList.remove('open');
-                submenuArrow2.classList.remove('rotated');
-                submenu2Open = false;
-            }
-        });
-
-        // Volver a index.html al hacer click en los iconos
-        document.querySelectorAll('.ik3-title-img').forEach(img => {
-            img.addEventListener('click', () => {
-                window.location.href = 'index.html';
+    // Cargar y mostrar jugadores de Instakill 3
+    fetch('jugadoresIK3.json')
+        .then(response => response.json())
+        .then(jugadores => {
+            const tbody = document.querySelector('#tabla-jugadores-ik3 tbody');
+            tbody.innerHTML = '';
+            jugadores.forEach(jugador => {
+                // Asignar clase de color según el rol
+                let rolClass = '';
+                switch ((jugador.rol || '').toLowerCase()) {
+                    case 'vip': rolClass = 'rol-vip'; break;
+                    case 'moderador': rolClass = 'rol-moderador'; break;
+                    case 'admin': rolClass = 'rol-administrador'; break;
+                    default: rolClass = 'rol-miembro';
+                }
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        <img src="${jugador.avatar || 'imagenes/default-avatar.png'}" alt="Avatar de ${jugador.nick}" class="avatar-cuadrado">
+                        <span>${jugador.nick}</span>
+                    </td>
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        ${jugador.nombre_real || ''}
+                    </td>
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        ${jugador.fecha_inscripcion || ''}
+                    </td>
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        <span class="${rolClass}">${jugador.rol || ''}</span>
+                    </td>
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        <span class="${
+                            jugador.veterania === 'veterano' ? 'veterania-veterano' :
+                            jugador.veterania === 'veterano +' ? 'veterania-veterano-plus' :
+                            'veterania-no'
+                        }">${
+                            jugador.veterania === 'veterano' ? '+' :
+                            jugador.veterania === 'veterano +' ? '++' :
+                            'No'
+                        }</span>
+                    </td>
+                    <td style="padding:0.6em 1em;vertical-align:middle;">
+                        <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:${jugador.estado === 'Vivo' ? '#7ed957' : '#c82323'};margin-right:0.5em;" aria-label="${jugador.estado}"></span>
+                        ${jugador.estado}
+                    </td>
+                `;
+                tbody.appendChild(tr);
             });
+        })
+        .catch(() => {
+            const tbody = document.querySelector('#tabla-jugadores-ik3 tbody');
+            tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:#888;">No se pudieron cargar los jugadores.</td></tr>';
         });
-    </script>
+</script>
 </body>
 </html>
